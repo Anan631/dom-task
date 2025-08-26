@@ -33,15 +33,15 @@ const secondParagraph = firstParagraph.nextElementSibling;
 console.log( (firstParagraph.parentElement === secondParagraph.parentElement)? "siblings" : "descendant");
 
 // 1.6 
-document.body.childNodes.forEach(node => {
-  if (node.nodeType === 3) { 
-    console.log("Text node found:", JSON.stringify(node.textContent));
+//we need console just unexpected text nodes
+for (let node of document.body.childNodes) {
+  if (node.nodeType === 3) { // Text Node
+    console.log(node);
   }
-
+}
 /*Explanation:
 HTML formatting adds invisible text nodes for line breaks and spaces.*/
 
-});
 
 
 
